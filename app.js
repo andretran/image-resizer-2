@@ -39,7 +39,7 @@ app.post('/upload', upload.single('uploaded_file'), async function(req, res, nex
   res.send(imageBuffer);
 });
 
-// Uploads 
+// Uploads multiple files via html form and returns a zip file
 app.post('/upload-multiple', upload.array('uploaded_file'), async function(req, res, next) {
   if (!req.files) {
     return res.status(400).send('No file uploaded.');
